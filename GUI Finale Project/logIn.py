@@ -2,7 +2,7 @@ from tkinter import *
 import mainMenu
 
 
-showing = True
+showing = True#
 
 
 

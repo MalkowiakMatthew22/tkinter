@@ -1,11 +1,11 @@
 from tkinter import *
 
 
-#def init():
+def init():
 
-mainWindow = Tk()
-mainWindow.geometry("550x100")
-mainWindow.title("Twivivia")
-
-
-mainWindow.mainloop()
+    mainWindow = Tk()
+    mainWindow.geometry("550x100")
+    mainWindow.title("Twivivia")
+    
+    
+    mainWindow.mainloop()

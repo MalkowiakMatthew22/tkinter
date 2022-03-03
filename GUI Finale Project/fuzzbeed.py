@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+from unicodedata import category
 
 #Var
 
@@ -36,21 +37,19 @@ kojCon = 0
 nameCat = 0
 lickableScore = 0
 
-
 #Functions
 
 def roll1():
     manCon = random.randrange(1,5)
-    
     S4Chap1Button.destroy()
 def roll2():
-    conCon
+    conCon = random.randrange(1,9)
     S4Chap2Button.destroy()
 def roll3():
-    cloneCon
+    cloneCon = random.randrange(1, 13)
     S4Chap3Button.destroy()
 def roll4():
-    kojCon
+    kojCon = random.randrange(1,101)
     S4Chap4Button.destroy()
 
 def startQuiz():
@@ -196,7 +195,27 @@ def move2():
     S4Chap2Button.grid(row = 5, column =1)
     S4Chap3Button.grid(row = 7, column =1)
     S4Chap4Button.grid(row = 9, column =1)
+    S4continButton.grid(row = 10, column = 1)
 
+def move3():
+    S4HeadLabel.destroy()
+    S4DesLabel.destroy()
+    S4Chap1Label.destroy()
+    S4Chap2Label.destroy()
+    S4Chap3Label.destroy()
+    S4Chap4Label.destroy()
+    S4continButton.destroy()
+    S5HeadLabel.grid(row = 0, column = 0)
+    S5DesLabel.grid(row = 1, column = 0)
+    S5Chap1Label.grid(row = 2, column = 0)
+    S5Button.grid(row = 4, column = 0)
+
+def finalCom():
+    S5HeadLabel.destroy()
+    S5DesLabel.destroy()
+    S5Chap1Label.destroy()
+    S5Button.destroy()
+    nameCat = random.randrange(1,21)
 
 #Window Setup
 mainWindow = Tk()
@@ -241,23 +260,23 @@ S2Chap13Label = Label(mainWindow, text = "A word your name kind of sounds like? 
 S2Chap14Label = Label(mainWindow, text = "What is your Zodiac sign?")
 S2Chap15Label = Label(mainWindow, text = "If you had to define your personality in one word, what would it be?")
 
-S2Chap1Entry = Entry(mainWindow,)
-S2Chap2aEntry = Entry(mainWindow,)
-S2Chap2bEntry = Entry(mainWindow,)
-S2Chap3Entry = Entry(mainWindow,)
-S2Chap4aEntry = Entry(mainWindow,)
-S2Chap4bEntry = Entry(mainWindow,)
-S2Chap5Entry = Entry(mainWindow,)
-S2Chap6Entry = Entry(mainWindow,)
-S2Chap7Entry = Entry(mainWindow,)
-S2Chap8Entry = Entry(mainWindow,)
-S2Chap9Entry = Entry(mainWindow,)
-S2Chap10Entry = Entry(mainWindow,)
-S2Chap11Entry = Entry(mainWindow,)
-S2Chap12Entry = Entry(mainWindow,)
-S2Chap13Entry = Entry(mainWindow,)
-S2Chap14Entry = Entry(mainWindow,)
-S2Chap15Entry = Entry(mainWindow,)
+S2Chap1Entry = Entry(mainWindow)
+S2Chap2aEntry = Entry(mainWindow)
+S2Chap2bEntry = Entry(mainWindow)
+S2Chap3Entry = Entry(mainWindow)
+S2Chap4aEntry = Entry(mainWindow)
+S2Chap4bEntry = Entry(mainWindow)
+S2Chap5Entry = Entry(mainWindow)
+S2Chap6Entry = Entry(mainWindow)
+S2Chap7Entry = Entry(mainWindow)
+S2Chap8Entry = Entry(mainWindow)
+S2Chap9Entry = Entry(mainWindow)
+S2Chap10Entry = Entry(mainWindow)
+S2Chap11Entry = Entry(mainWindow)
+S2Chap12Entry = Entry(mainWindow)
+S2Chap13Entry = Entry(mainWindow)
+S2Chap14Entry = Entry(mainWindow)
+S2Chap15Entry = Entry(mainWindow)
 
 continueButton = Button(mainWindow, text = "Continue", command = lambda: move1())
 
@@ -295,11 +314,15 @@ S4Chap3Label = Label(mainWindow, text = "THE CLONE CONDITION: Click below to det
 S4Chap3Button = Button(mainWindow, text = "Roll", command = lambda: roll3())
 S4Chap4Label = Label(mainWindow, text = "--[OPTIONAL]--THE KOJIMA CONDITION: Click below to determine if you have this condition (1/100 chance of getting)")
 S4Chap4Button = Button(mainWindow, text = "Roll", command = lambda: roll4())
+S4continButton = Button(mainWindow, text = "Continue", command = lambda: move3())
+
 
     #Section 5
-S5HeadLabel = Label(mainWindow, text = "Section 5: Determining Your Name Category", font ="Roman 14")
-S5DesLabel = Label(mainWindow, text = "Kojima names fall into a finite number of categories. This section will determine the category in which your name belongs. NOTE:If you have a name + 6 alternate names, you will do this section once to find your true name, and then you will have an alternate name in every other category.", font = "Roman 9")
-S5Chap1Label = Label(mainWindow, text = "Click below to determine your name category. Once you have figured out your name category, you can skip ahead to the section that outlines the rules of your name:")
+S5HeadLabel = Label(mainWindow, text = "Section 5: Determining Your Name Category", font = "Roman 14")
+S5DesLabel = Label(mainWindow, text = "Kojima names fall into a finite number of categories. This section will determine the category in which your name belongs. NOTE:If you have a name + 6 alternate names, you will do this section once to find your true name, and then you will have an alternate name in every other category.", font = "Roman 10", wraplength = 1170)
+S5Chap1Label = Label(mainWindow, text = "Click below to determine your name category. Once you have figured out your name category, you can skip ahead to see your name:")
+S5Button = Button(mainWindow, text = "Roll and Continue", command = lambda:finalCom())
+
 
 #Results
 

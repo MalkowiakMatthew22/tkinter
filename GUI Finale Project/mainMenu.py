@@ -1,10 +1,12 @@
 from tkinter import *
-import PhotoGal
+import photoGal
 import rectangleCalc
 #import fuzzbeed
-#import trivia
 import aboutPage
 import randNumGen
+import madlib
+import trivia
+
 
 def init():
 
@@ -16,8 +18,10 @@ def init():
         rectangleCalc.init()
     def randNumCom():
         randNumGen.init()
-   def triviaCom():
-       trivia.init()
+    def triviaCom():
+        trivia.init()
+    def madCom():
+        madlib.init()
 
         
 
@@ -35,6 +39,7 @@ def init():
     randomNumButton.grid(row = 0, column = 1)
     triviaButton = Button(mainWindow, text = "Trivia", command = lambda:triviaCom())
     triviaButton.grid(row = 1, column = 1)
-
+    madlibButton = Button(mainWindow, text = "Mad-Lib", command = lambda:madCom())
+    madlibButton.grid(row = 2, column = 1)
 
     mainWindow.mainloop()

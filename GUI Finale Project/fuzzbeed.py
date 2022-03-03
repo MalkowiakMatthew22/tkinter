@@ -216,6 +216,7 @@ def finalCom():
     S5Chap1Label.destroy()
     S5Button.destroy()
     nameCat = random.randrange(1,21)
+###############do ifs to elifs and daisy chain to end result
 
 #Window Setup
 mainWindow = Tk()
